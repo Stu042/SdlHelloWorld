@@ -10,7 +10,7 @@
 #define ERROR_RENDERER_FAILED (3)
 
 
-// definition of a new window
+// Definition of a new window
 typedef struct {
 	int width;
 	int height;
@@ -22,7 +22,7 @@ const NewWindow windowDef = {800, 600, "Hello World"};
 
 
 int main(void) {
-	// start SDL, we are using video and events, events will init automatically when we as for video.
+	// Start SDL, we are using video and events, events will init automatically when we as for video.
 	if (SDL_Init(SDL_INIT_VIDEO) < 0) {
 		printf("Error: Unable to initialise SDL. SDL Error: %s\n", SDL_GetError());
 		return ERROR_INIT_FAILED;
@@ -59,13 +59,13 @@ int main(void) {
 			}
 		}
 
-		// render
+		// Render
 		SDL_RenderClear(renderer);
 		SDL_SetRenderDrawColor(renderer, 128, 128, 128, 255);
 		SDL_RenderFillRect(renderer, &rect);
 		SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 
-		// tell sdl to show the rendered buffer
+		// Tell sdl to show the rendered buffer
 		SDL_RenderPresent(renderer);
 		SDL_Delay(0);
 	}
