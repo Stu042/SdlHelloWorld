@@ -15,9 +15,8 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(SDL2)
 
 
-include_directories(SdlHelloWorld ${SDL2_INCLUDE_DIRS})
-include_directories(headers)
+include_directories(SdlHelloWorld SDL2::SDL2)
 
 add_executable(SdlHelloWorld src/main.c)
 
-target_link_libraries(SdlHelloWorld PRIVATE SDL2::SDL2)
+target_link_libraries(SdlHelloWorld SDL2main SDL2-static)

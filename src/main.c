@@ -1,6 +1,6 @@
 #include <stdbool.h>
 #include <stdio.h>
-#include <SDL2/SDL.h>
+#include <SDL.h>
 
 
 // Just using a number is generally bad practice, so here we define the return values the app will use.
@@ -21,7 +21,7 @@ typedef struct {
 const NewWindow windowDef = {800, 600, "Hello World"};
 
 
-int main(void) {
+int main(int argc, char *argv[]) {
 	// Start SDL, we are using video and events, events will init automatically when we as for video.
 	if (SDL_Init(SDL_INIT_VIDEO) < 0) {
 		printf("Error: Unable to initialise SDL. SDL Error: %s\n", SDL_GetError());
